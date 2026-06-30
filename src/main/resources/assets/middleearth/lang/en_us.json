@@ -1,0 +1,13 @@
+{
+  "itemGroup.middleearth": "Example Mod Tab",
+  "block.middleearth.example_block": "Example Block",
+  "item.middleearth.example_item": "Example Item",
+
+  "middleearth.configuration.title": "MiddleEarth Configs",
+  "middleearth.configuration.section.middleearth.common.toml": "MiddleEarth Configs",
+  "middleearth.configuration.section.middleearth.common.toml.title": "MiddleEarth Configs",
+  "middleearth.configuration.items": "Item List",
+  "middleearth.configuration.logDirtBlock": "Log Dirt Block",
+  "middleearth.configuration.magicNumberIntroduction": "Magic Number Text",
+  "middleearth.configuration.magicNumber": "Magic Number"
+}

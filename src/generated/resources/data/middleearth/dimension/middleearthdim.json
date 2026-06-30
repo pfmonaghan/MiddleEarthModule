@@ -1,0 +1,120 @@
+{
+  "type": "middleearth:middleearthdim_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "middleearth:gondor_biome",
+          "parameters": {
+            "continentalness": 0.1,
+            "depth": 0.0,
+            "erosion": 0.2,
+            "humidity": 0.4,
+            "offset": 0.0,
+            "temperature": 0.3,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "middleearth:osgiliath_biome",
+          "parameters": {
+            "continentalness": 0.15,
+            "depth": 0.1,
+            "erosion": 0.2,
+            "humidity": 0.4,
+            "offset": 0.0,
+            "temperature": 0.3,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "middleearth:ithilien_biome",
+          "parameters": {
+            "continentalness": 0.1,
+            "depth": 0.2,
+            "erosion": 0.2,
+            "humidity": 0.6,
+            "offset": 0.0,
+            "temperature": 0.3,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "middleearth:rohan_biome",
+          "parameters": {
+            "continentalness": 0.2,
+            "depth": 0.0,
+            "erosion": 0.3,
+            "humidity": 0.2,
+            "offset": 0.0,
+            "temperature": 0.5,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "middleearth:fangorn_biome",
+          "parameters": {
+            "continentalness": 0.3,
+            "depth": 0.0,
+            "erosion": 0.5,
+            "humidity": 0.8,
+            "offset": 0.0,
+            "temperature": 0.3,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "middleearth:moria_biome",
+          "parameters": {
+            "continentalness": 0.3,
+            "depth": 0.0,
+            "erosion": 0.7,
+            "humidity": 0.2,
+            "offset": 0.0,
+            "temperature": -0.2,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "middleearth:dead_marshes_biome",
+          "parameters": {
+            "continentalness": 0.1,
+            "depth": 0.0,
+            "erosion": 0.1,
+            "humidity": 0.9,
+            "offset": 0.0,
+            "temperature": 0.3,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "middleearth:mordor_outskirts_biome",
+          "parameters": {
+            "continentalness": 0.2,
+            "depth": 0.0,
+            "erosion": 0.3,
+            "humidity": 0.2,
+            "offset": 0.0,
+            "temperature": 0.7,
+            "weirdness": 0.0
+          }
+        },
+        {
+          "biome": "middleearth:mordor_biome",
+          "parameters": {
+            "continentalness": 0.4,
+            "depth": 0.0,
+            "erosion": 0.2,
+            "humidity": 0.1,
+            "offset": 0.1,
+            "temperature": 0.9,
+            "weirdness": 0.0
+          }
+        }
+      ]
+    },
+    "settings": "minecraft:overworld"
+  }
+}
