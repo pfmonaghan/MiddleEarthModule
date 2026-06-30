@@ -19,7 +19,7 @@ license="LGPLv3"
 
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
-modId="elendilmod"
+modId="middleearth"
 version="1"
 displayName="The Third Age"
 authors="LordMonkeyham"
