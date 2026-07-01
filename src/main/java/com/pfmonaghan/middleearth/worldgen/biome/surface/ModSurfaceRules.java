@@ -1,10 +1,12 @@
 package com.pfmonaghan.middleearth.worldgen.biome.surface;
 
 import com.pfmonaghan.middleearth.worldgen.biome.ModBiomes;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 
 public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
@@ -15,6 +17,8 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource GRAVEL = makeStateRule(Blocks.GRAVEL);
     private static final SurfaceRules.RuleSource MUD = makeStateRule(Blocks.MUD);
     private static final SurfaceRules.RuleSource WATER = makeStateRule(Blocks.WATER);
+    private static final SurfaceRules.RuleSource BEDROCK = makeStateRule(Blocks.BEDROCK);
+    private static final SurfaceRules.RuleSource SNOW = makeStateRule(Blocks.SNOW_BLOCK);
 
 
     public static SurfaceRules.RuleSource makeRules() {
@@ -24,16 +28,27 @@ public class ModSurfaceRules {
         SurfaceRules.RuleSource deepslateSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, DEEPSLATE), STONE);
         SurfaceRules.RuleSource gravelSurface = SurfaceRules.sequence(SurfaceRules.ifTrue(isAtOrAboveWaterLevel, GRAVEL), STONE);
 
-        return SurfaceRules.sequence(
-                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.MORDOR_BIOME),deepslateSurface)),
-                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.MORDOR_OUTSKIRTS_BIOME),gravelSurface)),
-                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.DEAD_MARSHES_BIOME), SurfaceRules.sequence(
-                        MUD,
-                        SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, (double)0.0f), WATER)
-                ))),
+        SurfaceRules.RuleSource sf8 = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(
+                        new SurfaceRules.RuleSource[]{
+                                SurfaceRules.ifTrue(SurfaceRules.isBiome(new ResourceKey[]{ModBiomes.MORDOR_BIOME}), deepslateSurface),
+                                SurfaceRules.ifTrue(SurfaceRules.isBiome(new ResourceKey[]{ModBiomes.MORDOR_OUTSKIRTS_BIOME}), gravelSurface),
+                                SurfaceRules.ifTrue(SurfaceRules.isBiome(new ResourceKey[]{ModBiomes.MORIA_BIOME}), SurfaceRules.ifTrue(SurfaceRules.steep(), SNOW)),
+                                SurfaceRules.ifTrue(SurfaceRules.isBiome(new ResourceKey[]{ModBiomes.DEAD_MARSHES_BIOME}),
+                                        SurfaceRules.sequence(new SurfaceRules.RuleSource[]{SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, (double)0.0f), MUD), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, (double)0.0f), WATER)}))
+
+                        })
+                ),
+
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, grassSurface)
                 // Default to a grass and dirt surface
 
+        );
+        SurfaceRules.RuleSource surfacerules$rulesource9 = SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), sf8);
+
+        return SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.verticalGradient("bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), BEDROCK),
+                sf8
         );
     }
 

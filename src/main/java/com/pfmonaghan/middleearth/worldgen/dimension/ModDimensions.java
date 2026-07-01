@@ -119,12 +119,18 @@ public class ModDimensions {
 
 
                         ))),
-                Holder.direct(new NoiseGeneratorSettings(NoiseSettings.create(-64, 416, 1, 2), Blocks.STONE.defaultBlockState(), Blocks.WATER.defaultBlockState(),
-
-                        NoiseRouterData.overworld(context.lookup(Registries.DENSITY_FUNCTION), context.lookup(Registries.NOISE),
-                                false,false),
-                        ModSurfaceRules.makeRules(), (new OverworldBiomeBuilder()).spawnTarget(),
-                        63, false, true, true, false)
+                Holder.direct(new NoiseGeneratorSettings(
+                        NoiseSettings.create(-64, 416, 1, 2),
+                        Blocks.STONE.defaultBlockState(),
+                        Blocks.WATER.defaultBlockState(),
+                        NoiseRouterData.overworld(context.lookup(Registries.DENSITY_FUNCTION), context.lookup(Registries.NOISE), false,false),
+                        ModSurfaceRules.makeRules(),
+                        (new OverworldBiomeBuilder()).spawnTarget(),
+                        63,
+                        false,
+                        true,
+                        true,
+                        false)
                 ));
 
         LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.MIDDLEEARTH_DIM_TYPE), noiseBasedChunkGenerator);
