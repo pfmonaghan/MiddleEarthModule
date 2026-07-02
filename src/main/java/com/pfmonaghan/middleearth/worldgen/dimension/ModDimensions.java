@@ -78,13 +78,13 @@ public class ModDimensions {
                                         biomeRegistry.getOrThrow(ModBiomes.GONDOR_BIOME)),
 
                                 Pair.of(
-                                        // OSGILIATH - Same as Gondor but slightly different weirdness for variation
-                                        Climate.parameters(0.3F, 0.4F, 0.15F, 0.2F, 0.1F, 0.0F, 0.0F),
+                                        // OSGILIATH - Same as Gondor but slightly different weirdness for variation ORIGINAL DEPTH 0.1f
+                                        Climate.parameters(0.3F, 0.4F, 0.15F, 0.2F, 0.0F, 0.0F, 0.0F),
                                         biomeRegistry.getOrThrow(ModBiomes.OSGILIATH_BIOME)),
 
                                 Pair.of(
-                                        // ITHILIEN - Lush, temperate, near Gondor
-                                        Climate.parameters(0.3F, 0.6F, 0.1F, 0.2F, 0.2F, 0.0F, 0.0F),
+                                        // ITHILIEN - Lush, temperate, near Gondor oRIGINAL DEPTH 0.2f
+                                        Climate.parameters(0.3F, 0.6F, 0.1F, 0.2F, 0.0F, 0.0F, 0.0F),
                                         biomeRegistry.getOrThrow(ModBiomes.ITHILIEN_BIOME)),
 
                                 Pair.of(
@@ -95,6 +95,11 @@ public class ModDimensions {
                                 Pair.of(
                                         // FANGORN - Wet forest, moderate temp, hilly
                                         Climate.parameters(0.3F, 0.8F, 0.3F, 0.5F, 0.0F, 0.0F, 0.0F),
+                                        biomeRegistry.getOrThrow(ModBiomes.FANGORN_BIOME)),
+
+                                Pair.of(
+                                        // FANGORN - Wet forest, moderate temp, hilly
+                                        Climate.parameters(0.4F, 0.7F, 0.3F, 0.4F, 0.0F, 0.0F, 0.0F),
                                         biomeRegistry.getOrThrow(ModBiomes.FANGORN_BIOME)),
 
                                 Pair.of(
